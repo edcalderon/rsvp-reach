@@ -1,0 +1,568 @@
+#pragma version 8
+// resource: R_Txn
+txn ApplicationID
+bz alloc
+byte base64()
+app_global_get
+dup
+int 0
+extract_uint64
+store 1 // GV_currentStep :: UInt
+int 8
+extract_uint64
+store 2 // GV_currentTime :: UInt
+byte base64(AA==)
+app_global_get
+preamble:
+pushbytess base64(EiX6hA==) base64(J+/ebA==) base64(K/BAuw==) base64(Pf77Mw==) base64(pHE8lg==) base64(v4aWtg==) base64(39kjKA==)
+txna ApplicationArgs 0
+match Checkin_timesUp_6VaVuGNU_p_lUHBxbfnYhEiaUxRqI6EY3TJHCUtxx9o_ _reachp_3 Checkin_theyCamelUFV_FCVYzIqtttUVO9_Nf0LEYxix8fU4FbVcaWnzzA_ Attendee_iWillGoJzT6_ZraXGwBKEUaZnIGutDj2XPEeM0I0VKxL0BLDBM_ _reachp_0 _reachp_4 _reachp_1
+errl:
+err
+Attendee_iWillGoJzT6_ZraXGwBKEUaZnIGutDj2XPEeM0I0VKxL0BLDBM_:
+_reacha_Attendee_iWillGo:
+int 41
+bzero
+store 11 // v1142
+_reachi_3:
+int 4
+load 1 // GV_currentStep :: UInt
+==
+assert
+callsub l5_LF_svsLoad_4
+load 11 // v1142
+int 0
+extract_uint64
+store 12 // v1141
+load 11 // v1142
+extract 8 33
+store 19 // .fork83.msg/493
+byte base64(6itM0w==)
+load 12 // v1141
+itob
+concat
+load 19 // .fork83.msg/493
+concat
+log // up to 45 bytes
+// ^ log: "_reach_e3" [v1141,.fork83.msg/493] "_reach_e3(uint64,(byte,byte[32]))"
+load 12 // v1141
+callsub l2_LF_timeCheck
+global Round
+load 16 // v434
+<
+assert
+load 19 // .fork83.msg/493
+int 0
+getbyte
+switch l6_Attendee_iWillGo0_83 l7_Checkin_theyCame0_83
+b errl
+Checkin_theyCamelUFV_FCVYzIqtttUVO9_Nf0LEYxix8fU4FbVcaWnzzA_:
+txna ApplicationArgs 1
+store 11 // v1126
+_reacha_Checkin_theyCame:
+int 8
+bzero
+byte base64(AQ==)
+load 11 // v1126
+concat
+concat
+store 11 // v1142
+b _reachi_3
+Checkin_timesUp_6VaVuGNU_p_lUHBxbfnYhEiaUxRqI6EY3TJHCUtxx9o_:
+_reacha_Checkin_timesUp:
+int 8
+bzero
+store 11 // v1145
+_reachi_4:
+int 4
+load 1 // GV_currentStep :: UInt
+==
+assert
+callsub l5_LF_svsLoad_4
+load 11 // v1145
+int 0
+extract_uint64
+store 12 // v1144
+byte base64(b/SOKQ==)
+load 12 // v1144
+itob
+concat
+log // up to 12 bytes
+// ^ log: "_reach_e4" [v1144,.api373.dom/592] "_reach_e4(uint64,())"
+load 12 // v1144
+callsub l2_LF_timeCheck
+global Round
+load 16 // v434
+>=
+assert
+_api_Checkin_timesUp4:
+int 1
+store 11 // v595
+byte base64(AAAAAAAAAlM=)
+load 11 // v595
+itob
+substring 7 8
+concat
+log // up to 9 bytes
+load 11 // v595
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+int 0
+global Round
+store 13 // thisConsensusTime/438
+store 14 // keepGoing/437
+_reachl_2:
+load 14 // keepGoing/437
+bz l13_ifF
+l14_LF_svsDump_4:
+load 18 // Admin/418
+load 17 // price/419
+itob
+concat
+load 16 // v434
+itob
+concat
+load 15 // howMany/436
+itob
+concat
+int 4
+global Round
+updateStateNoOp:
+store 2 // GV_currentTime :: UInt
+store 1 // GV_currentStep :: UInt
+byte base64(AA==)
+swap
+extract 0 56
+app_global_put
+byte base64()
+load 1 // GV_currentStep :: UInt
+itob
+load 2 // GV_currentTime :: UInt
+itob
+concat
+app_global_put
+txn OnCompletion
+int NoOp
+==
+assert
+// checked on completion
+callsub l15_LF_updateMbr
+updateState:
+load 3 // GV_wasntMeth :: Bool
+bnz done
+apiReturn_noCheck:
+byte base64(FR98dQ==)
+load 4 // GV_apiRet :: Null
+concat
+log // up to 5 bytes
+done:
+int 1
+return
+_api_Attendee_iWillGo3:
+load 17 // price/419
+callsub l8_LF_checkTxn_False
+// ^ CheckPay
+// at ./index.rsh:32:23:dot
+// resource: R_Box
+byte base64()
+byte base64()
+byte base64(AA==)
+txn Sender
+concat
+callsub l9_LF_mapRef
+int 0
+getbyte
+int 1
+!=
+assert
+// ^ Claim: not yet rspvd
+// at reach standard library:57:5:application
+// at ./index.rsh:48:22:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./index.rsh:47:17:application call to [unknown function] (defined at: ./index.rsh:47:17:function exp)
+int 15700
+byte base64(AA==)
+txn Sender
+concat
+byte base64()
+callsub l10_LF_mapSet
+int 1
+store 11 // v512
+byte base64(AAAAAAAAAgA=)
+load 11 // v512
+itob
+substring 7 8
+concat
+log // up to 9 bytes
+load 11 // v512
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+load 15 // howMany/436
+int 1
++
+int 1
+global Round
+store 13 // thisConsensusTime/438
+store 14 // keepGoing/437
+store 15 // howMany/436
+b _reachl_2
+_api_Checkin_theyCame3:
+load 19 // .fork83.msg/493
+extract 1 32
+store 11 // v/567
+// resource: R_Box
+byte base64()
+byte base64()
+byte base64(AA==)
+load 11 // v/567
+concat
+callsub l9_LF_mapRef
+int 0
+getbyte
+int 1
+==
+assert
+// ^ Claim: rspvd
+// at reach standard library:57:5:application
+// at ./index.rsh:62:22:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./index.rsh:61:22:application call to [unknown function] (defined at: ./index.rsh:61:22:function exp)
+txn Sender
+load 18 // Admin/418
+==
+assert
+// ^ Claim: u are the Deployer
+// at reach standard library:57:5:application
+// at ./index.rsh:63:22:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./index.rsh:61:22:application call to [unknown function] (defined at: ./index.rsh:61:22:function exp)
+load 17 // price/419
+// resource: R_Account
+load 11 // v/567
+callsub l11_LF_makeTxn_False_False_False_True
+int 15700
+byte base64(AA==)
+load 11 // v/567
+concat
+l12_LF_mapDel:
+box_del
+int 0
+cover 2
+select
+l17_LF_mbrSub:
+load 7 // GV_mbrSub :: UInt
++
+store 7 // GV_mbrSub :: UInt
+int 1
+store 11 // v579
+byte base64(AAAAAAAAAkM=)
+load 11 // v579
+itob
+substring 7 8
+concat
+log // up to 9 bytes
+load 11 // v579
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+load 15 // howMany/436
+int 1
+-
+int 1
+global Round
+store 13 // thisConsensusTime/438
+store 14 // keepGoing/437
+store 15 // howMany/436
+b _reachl_2
+_reachi_0:
+txn Sender
+store 18 // Admin/418
+global Round
+store 11 // thisConsensusTime/421
+load 13 // v1136
+int 0
+extract_uint64
+store 14 // v1135
+load 13 // v1136
+int 8
+extract_uint64
+store 17 // price/419
+load 13 // v1136
+int 16
+extract_uint64
+store 12 // deadline/420
+byte base64(93ETTQ==)
+load 14 // v1135
+itob
+concat
+load 17 // price/419
+itob
+concat
+load 12 // deadline/420
+itob
+concat
+log // up to 28 bytes
+// ^ log: "_reach_e0" [v1135,price/419,deadline/420] "_reach_e0(uint64,uint64,uint64)"
+load 14 // v1135
+callsub l2_LF_timeCheck
+l3_LF_svsDump_1:
+load 18 // Admin/418
+load 17 // price/419
+itob
+concat
+load 12 // deadline/420
+itob
+concat
+load 11 // thisConsensusTime/421
+itob
+concat
+int 1
+global Round
+b updateStateNoOp
+_reachi_1:
+int 1
+load 1 // GV_currentStep :: UInt
+==
+assert
+l4_LF_svsLoad_1:
+dup
+extract 0 32
+store 18 // Admin/418
+dup
+int 32
+extract_uint64
+store 17 // price/419
+dup
+int 40
+extract_uint64
+store 12 // deadline/420
+int 48
+extract_uint64
+store 11 // thisConsensusTime/421
+load 16 // v1139
+btoi
+store 19 // v1138
+byte base64(1RUZFA==)
+load 19 // v1138
+itob
+concat
+log // up to 12 bytes
+// ^ log: "_reach_e1" [v1138] "_reach_e1(uint64)"
+load 19 // v1138
+callsub l2_LF_timeCheck
+load 18 // Admin/418
+txn Sender
+==
+assert
+// ^ Claim: sender correct
+// at ./index.rsh:25:7:dot
+load 11 // thisConsensusTime/421
+load 12 // deadline/420
++
+store 16 // v434
+int 0
+int 1
+global Round
+store 13 // thisConsensusTime/438
+store 14 // keepGoing/437
+store 15 // howMany/436
+b _reachl_2
+_reachp_0:
+callsub l0_LF_wasntMeth
+int 100000
+callsub l1_LF_mbrAdd
+txna ApplicationArgs 1
+store 13 // v1136
+b _reachi_0
+_reachp_1:
+callsub l0_LF_wasntMeth
+txna ApplicationArgs 1
+store 16 // v1139
+b _reachi_1
+_reachp_3:
+callsub l0_LF_wasntMeth
+txna ApplicationArgs 1
+store 11 // v1142
+b _reachi_3
+_reachp_4:
+callsub l0_LF_wasntMeth
+txna ApplicationArgs 1
+store 11 // v1145
+b _reachi_4
+alloc:
+int 0
+txn GlobalNumUint
+==
+assert
+int 2
+txn GlobalNumByteSlice
+==
+assert
+int 0
+txn LocalNumUint
+==
+assert
+int 0
+txn LocalNumByteSlice
+==
+assert
+callsub l0_LF_wasntMeth
+int 56
+bzero
+int 0
+int 0
+b updateStateNoOp
+apiReturn_check:
+txn OnCompletion
+int NoOp
+==
+assert
+// checked on completion
+b apiReturn_noCheck
+l13_ifF:
+load 15 // howMany/436
+load 17 // price/419
+*
+// resource: R_Account
+load 18 // Admin/418
+callsub l11_LF_makeTxn_False_False_False_True
+updateStateHalt:
+txn OnCompletion
+int DeleteApplication
+==
+assert
+// checked on completion
+callsub l15_LF_updateMbr
+// resource: R_Account
+global CurrentApplicationAddress
+balance
+global CurrentApplicationAddress
+min_balance
+-
+l16_getActualBalance:
+dup
+store 6 // GV_mbrAdd :: UInt
+global CurrentApplicationAddress
+callsub l11_LF_makeTxn_False_False_False_True
+b updateState
+l18_boxSet:
+pop
+swap
+box_put
+pop
+retsub
+l19_LF_makeTxnK_False_True:
+int 0
+itxn_field Fee
+int pay
+itxn_field TypeEnum
+itxn_field Receiver
+itxn_field Amount
+itxn_submit
+retsub
+l6_Attendee_iWillGo0_83:
+b _api_Attendee_iWillGo3
+l7_Checkin_theyCame0_83:
+b _api_Checkin_theyCame3
+updateMbr_eq:
+pop
+retsub
+updateMbr_neg:
+swap
+-
+dup
+store 6 // GV_mbrAdd :: UInt
+global CreatorAddress
+callsub l11_LF_makeTxn_False_False_False_True
+retsub
+updateMbr_pos_eq:
+-
+dup
+bz updateMbr_eq
+dup
+store 6 // GV_mbrAdd :: UInt
+callsub l8_LF_checkTxn_False
+retsub
+l0_LF_wasntMeth:
+int 1
+store 3 // GV_wasntMeth :: Bool
+retsub
+l2_LF_timeCheck:
+dup
+int 0
+==
+swap
+load 2 // GV_currentTime :: UInt
+==
+||
+assert
+retsub
+l11_LF_makeTxn_False_False_False_True:
+itxn_begin
+b l19_LF_makeTxnK_False_True
+l9_LF_mapRef:
+box_get
+dup
+itob
+substring 7 8
+bury 4
+select
+concat
+retsub
+l8_LF_checkTxn_False:
+// resource: R_Txn
+txn GroupIndex
+load 0 // GV_txnCounter :: UInt
+int 1
++
+dup
+store 0 // GV_txnCounter :: UInt
+-
+dupn 2
+gtxns Receiver
+global CurrentApplicationAddress
+==
+assert
+gtxns TypeEnum
+int pay
+==
+assert
+gtxns Amount
+==
+assert
+retsub
+l5_LF_svsLoad_4:
+dup
+extract 0 32
+store 18 // Admin/418
+dup
+int 32
+extract_uint64
+store 17 // price/419
+dup
+int 40
+extract_uint64
+store 16 // v434
+int 48
+extract_uint64
+store 15 // howMany/436
+retsub
+l1_LF_mbrAdd:
+load 6 // GV_mbrAdd :: UInt
++
+store 6 // GV_mbrAdd :: UInt
+retsub
+l15_LF_updateMbr:
+load 6 // GV_mbrAdd :: UInt
+load 7 // GV_mbrSub :: UInt
+dup2
+>=
+bz updateMbr_neg
+b updateMbr_pos_eq
+l10_LF_mapSet:
+swap
+dup
+box_len
+bnz l18_boxSet
+dig 3
+callsub l1_LF_mbrAdd
+b l18_boxSet
